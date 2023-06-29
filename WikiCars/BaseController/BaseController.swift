@@ -20,9 +20,8 @@ class BaseController: UIViewController{
 @objc extension BaseController {
     
     func addViews() {}
-    func layout() {}
     func configure() {
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .lightGray
     }
 }

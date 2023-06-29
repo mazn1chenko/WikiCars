@@ -15,7 +15,7 @@ enum Tabs: Int{
     
 }
 
-final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
     
     func settingsTabBar(){
         
-        tabBar.backgroundColor = .yellow
+        tabBar.backgroundColor = .gray
                 
         let mainPageViewController = MainPageViewController()
         let newsPageViewController = NewsPageViewController()
@@ -44,4 +44,20 @@ final class TabBarViewController: UITabBarController, UITabBarControllerDelegate
         setViewControllers([newsPageNavigationController, mainPageNavigationController, settingsPageNavigationController], animated: false)
     }
 
+}
+
+extension TabBarViewController: UITabBarControllerDelegate {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            if let tabBarItems = tabBar.items {
+                for (index, barItem) in tabBarItems.enumerated() {
+                    if barItem == item {
+                        tabBar.tintColor = UIColor.white
+                    } else {
+                        tabBarItems[index].setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+                    }
+                }
+            }
+        }
+    
 }

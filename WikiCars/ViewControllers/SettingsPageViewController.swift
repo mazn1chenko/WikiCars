@@ -8,11 +8,26 @@
 import UIKit
 
 class SettingsPageViewController: BaseController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Settings"
+        
+        navigationController?.navigationBar.isTranslucent = true
+
     }
     
+    //MARK: - Two main function of configure view
+    
+    private func setup() {
+        
+        
+    }
+    
+    private func layout() {
+        
+        
+    }
+
 }

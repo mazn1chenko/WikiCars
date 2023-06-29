@@ -17,6 +17,7 @@
 		71324DE52A4DCCD80051C1A8 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */; };
 		71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */; };
 		71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE82A4DD49A0051C1A8 /* BaseController.swift */; };
+		71324DEC2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
 		71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
 		71324DE82A4DD49A0051C1A8 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +96,7 @@
 		71324DDD2A4DBFFE0051C1A8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */,
+				71324DEA2A4DEB360051C1A8 /* MainPage */,
 				71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */,
 				71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */,
 			);
@@ -109,6 +111,15 @@
 				71324DE82A4DD49A0051C1A8 /* BaseController.swift */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		71324DEA2A4DEB360051C1A8 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */,
+				71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */,
+			);
+			path = MainPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			files = (
 				71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */,
 				71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */,
+				71324DEC2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift in Sources */,
 				71324DE52A4DCCD80051C1A8 /* SettingsPageViewController.swift in Sources */,
 				71324DE32A4DCCC80051C1A8 /* NewsPageViewController.swift in Sources */,
 				71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */,

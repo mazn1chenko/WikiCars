@@ -8,12 +8,27 @@
 import UIKit
 
 class NewsPageViewController: BaseController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "News"
+        
+        navigationController?.navigationBar.isTranslucent = true
+
     }
     
+    //MARK: - Two main function of configure view
+    
+    private func setup() {
+        
+        
+    }
+    
+    private func layout() {
+        
+        
+    }
+
 }
 
