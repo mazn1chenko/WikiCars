@@ -12,6 +12,11 @@
 		71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */; };
 		71324DD12A4DBF370051C1A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71324DD02A4DBF370051C1A8 /* Assets.xcassets */; };
 		71324DD42A4DBF370051C1A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71324DD22A4DBF370051C1A8 /* LaunchScreen.storyboard */; };
+		71324DE12A4DCC010051C1A8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE02A4DCC010051C1A8 /* TabBarViewController.swift */; };
+		71324DE32A4DCCC80051C1A8 /* NewsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */; };
+		71324DE52A4DCCD80051C1A8 /* SettingsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */; };
+		71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */; };
+		71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE82A4DD49A0051C1A8 /* BaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		71324DD02A4DBF370051C1A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71324DD32A4DBF370051C1A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71324DD52A4DBF370051C1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71324DE02A4DCC010051C1A8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageViewController.swift; sourceTree = "<group>"; };
+		71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageViewController.swift; sourceTree = "<group>"; };
+		71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
+		71324DE82A4DD49A0051C1A8 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			children = (
 				71324DDC2A4DBFBE0051C1A8 /* Application */,
 				71324DDD2A4DBFFE0051C1A8 /* ViewControllers */,
+				71324DDF2A4DCB9C0051C1A8 /* BaseController */,
 				71324DDB2A4DBF850051C1A8 /* SupportingFiles */,
 			);
 			path = WikiCars;
@@ -84,8 +95,20 @@
 			isa = PBXGroup;
 			children = (
 				71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */,
+				71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */,
+				71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		71324DDF2A4DCB9C0051C1A8 /* BaseController */ = {
+			isa = PBXGroup;
+			children = (
+				71324DE02A4DCC010051C1A8 /* TabBarViewController.swift */,
+				71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */,
+				71324DE82A4DD49A0051C1A8 /* BaseController.swift */,
+			);
+			path = BaseController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +183,12 @@
 			files = (
 				71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */,
 				71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */,
+				71324DE52A4DCCD80051C1A8 /* SettingsPageViewController.swift in Sources */,
+				71324DE32A4DCCC80051C1A8 /* NewsPageViewController.swift in Sources */,
 				71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */,
+				71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */,
+				71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */,
+				71324DE12A4DCC010051C1A8 /* TabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

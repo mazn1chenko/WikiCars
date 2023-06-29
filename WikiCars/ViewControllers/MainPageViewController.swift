@@ -7,34 +7,16 @@
 
 import UIKit
 
-class MainPageViewController: UIViewController {
+class MainPageViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .lightGray
+
         title = "WikiCars"
         
-        setup()
-        layout()
-        
-    }
-    
-    //MARK: - two main function setup and layout
+        navigationController?.navigationBar.isTranslucent = true
 
-    func setup() {
-        
-        
     }
-    
-    func layout() {
-        
-        
-    }
-    
-    //MARK: - Fuction like a target for button or some else
-    
-    
 
 }
 
