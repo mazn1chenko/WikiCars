@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311BDBC36EB6C7CFB25B7841 /* Pods_WikiCars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */; };
 		71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DC72A4DBF340051C1A8 /* AppDelegate.swift */; };
 		71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DC92A4DBF340051C1A8 /* SceneDelegate.swift */; };
 		71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4D15C27F8C425E8BDA62D5 /* Pods-WikiCars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiCars.release.xcconfig"; path = "Target Support Files/Pods-WikiCars/Pods-WikiCars.release.xcconfig"; sourceTree = "<group>"; };
+		643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WikiCars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71324DC42A4DBF340051C1A8 /* WikiCars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiCars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71324DC72A4DBF340051C1A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71324DC92A4DBF340051C1A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
 		71324DE82A4DD49A0051C1A8 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiCars.debug.xcconfig"; path = "Target Support Files/Pods-WikiCars/Pods-WikiCars.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				311BDBC36EB6C7CFB25B7841 /* Pods_WikiCars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		251B049BE242B259681FF5CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		71324DBB2A4DBF340051C1A8 = {
 			isa = PBXGroup;
 			children = (
 				71324DC62A4DBF340051C1A8 /* WikiCars */,
 				71324DC52A4DBF340051C1A8 /* Products */,
+				9BF5874E7D9024F2E43BA3AB /* Pods */,
+				251B049BE242B259681FF5CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +137,16 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		9BF5874E7D9024F2E43BA3AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */,
+				2D4D15C27F8C425E8BDA62D5 /* Pods-WikiCars.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71324DD82A4DBF370051C1A8 /* Build configuration list for PBXNativeTarget "WikiCars" */;
 			buildPhases = (
+				069DE9479F9B6BCF276B1A9B /* [CP] Check Pods Manifest.lock */,
 				71324DC02A4DBF340051C1A8 /* Sources */,
 				71324DC12A4DBF340051C1A8 /* Frameworks */,
 				71324DC22A4DBF340051C1A8 /* Resources */,
+				8D521CF84C2B28A7EE948016 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +213,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		069DE9479F9B6BCF276B1A9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WikiCars-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D521CF84C2B28A7EE948016 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WikiCars/Pods-WikiCars-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WikiCars/Pods-WikiCars-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WikiCars/Pods-WikiCars-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		71324DC02A4DBF340051C1A8 /* Sources */ = {
@@ -334,6 +403,7 @@
 		};
 		71324DD92A4DBF370051C1A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +435,7 @@
 		};
 		71324DDA2A4DBF370051C1A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4D15C27F8C425E8BDA62D5 /* Pods-WikiCars.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
