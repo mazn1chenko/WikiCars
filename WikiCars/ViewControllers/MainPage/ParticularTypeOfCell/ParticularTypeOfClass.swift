@@ -1,34 +1,27 @@
 //
-//  MainPageViewController.swift
+//  ParticularTypeOfClass.swift
 //  WikiCars
 //
-//  Created by m223 on 29.06.2023.
+//  Created by m223 on 01.07.2023.
 //
 
 import UIKit
 
-class MainPageViewController: BaseController {
+class ParticularTypeOfClass: UIViewController {
     
     var mainCollectionView: UICollectionView!
     
     let layoutFlow = UICollectionViewFlowLayout()
     
-    var allBrandsOfCars: [String]?
-    
-    let refreshControl = UIRefreshControl()
+    var allModelInType: [DataCarsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "WikiCars"
         
         setup()
         layout()
         network()
-        
-        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        mainCollectionView.refreshControl = refreshControl
-        
     }
     
     //MARK: - Two main function of configure view
@@ -45,7 +38,7 @@ class MainPageViewController: BaseController {
         mainCollectionView.backgroundColor = .white
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
-        mainCollectionView.register(MainPageCollectionViewCell.self, forCellWithReuseIdentifier: MainPageCollectionViewCell.reuseID)
+        mainCollectionView.register(ParticularTypeOfClassCollectionViewCell.self, forCellWithReuseIdentifier: ParticularTypeOfClassCollectionViewCell.reuseID)
         
         
     }
@@ -58,55 +51,44 @@ class MainPageViewController: BaseController {
             mainCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             mainCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            
+
         ])
         
     }
     
-    //MARK: - Network
-    
-    func network(){
+    private func network() {
         
-        APIManager.shared.gettingCarsOfAllBrands(collection: "DataOfCars", docName: "AllBrands") { all in
-            self.allBrandsOfCars = all
+        APIManager.shared.getPosts(collection1: "DataOfCars", docName: title ?? "", collection2: "ParticularTypeOfCars") { allModels in
+            self.allModelInType = allModels
             self.mainCollectionView.reloadData()
-            
         }
         
-        
     }
     
-    @objc private func refreshData() {
-        mainCollectionView.reloadData()
-        
-        refreshControl.endRefreshing()
-    }
 }
 
     //MARK: - Extensions
 
-extension MainPageViewController: UICollectionViewDelegate{
+extension ParticularTypeOfClass: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = ParticularTypeOfClass()
-        vc.title = allBrandsOfCars?[indexPath.row]
+        let vc = CarInfoViewController()
+        let selected = allModelInType[indexPath.row]
+        vc.title = selected.name
+        vc.brand = title
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
 }
 
-extension MainPageViewController: UICollectionViewDataSource{
+extension ParticularTypeOfClass: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return allBrandsOfCars?.count ?? 1 }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return allModelInType.count}
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPageCollectionViewCell.reuseID, for: indexPath) as? MainPageCollectionViewCell
-        cell?.configureCell(nameOfBrand: allBrandsOfCars?[indexPath.row] ?? "NoInternet")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParticularTypeOfClassCollectionViewCell.reuseID, for: indexPath) as? ParticularTypeOfClassCollectionViewCell
+        cell?.configureCell(model: allModelInType[indexPath.row])
         return cell!
+        
     }
-    
-    
-    
 }
-

@@ -19,6 +19,14 @@
 		71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */; };
 		71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DE82A4DD49A0051C1A8 /* BaseController.swift */; };
 		71324DEC2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */; };
+		715897232A5030E1004E309D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 715897222A5030E0004E309D /* GoogleService-Info.plist */; };
+		715897252A5033A2004E309D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897242A5033A2004E309D /* APIManager.swift */; };
+		715897272A50345F004E309D /* DataCarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897262A50345F004E309D /* DataCarsModel.swift */; };
+		715897292A504023004E309D /* AllBrandsOfCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897282A504023004E309D /* AllBrandsOfCars.swift */; };
+		71FA77782A5062E900D80D6A /* ParticularTypeOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA77772A5062E900D80D6A /* ParticularTypeOfClass.swift */; };
+		71FA777A2A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */; };
+		71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */; };
+		71FA77802A50957D00D80D6A /* ParticularyCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		71324DE62A4DD3860051C1A8 /* NavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
 		71324DE82A4DD49A0051C1A8 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		715897222A5030E0004E309D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		715897242A5033A2004E309D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		715897262A50345F004E309D /* DataCarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCarsModel.swift; sourceTree = "<group>"; };
+		715897282A504023004E309D /* AllBrandsOfCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBrandsOfCars.swift; sourceTree = "<group>"; };
+		71FA77772A5062E900D80D6A /* ParticularTypeOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularTypeOfClass.swift; sourceTree = "<group>"; };
+		71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularTypeOfClassCollectionViewCell.swift; sourceTree = "<group>"; };
+		71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
+		71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularyCarModel.swift; sourceTree = "<group>"; };
 		A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiCars.debug.xcconfig"; path = "Target Support Files/Pods-WikiCars/Pods-WikiCars.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,10 +97,15 @@
 		71324DC62A4DBF340051C1A8 /* WikiCars */ = {
 			isa = PBXGroup;
 			children = (
+				715897212A503012004E309D /* APIManager */,
 				71324DDC2A4DBFBE0051C1A8 /* Application */,
 				71324DDD2A4DBFFE0051C1A8 /* ViewControllers */,
 				71324DDF2A4DCB9C0051C1A8 /* BaseController */,
 				71324DDB2A4DBF850051C1A8 /* SupportingFiles */,
+				715897222A5030E0004E309D /* GoogleService-Info.plist */,
+				715897262A50345F004E309D /* DataCarsModel.swift */,
+				71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */,
+				715897282A504023004E309D /* AllBrandsOfCars.swift */,
 			);
 			path = WikiCars;
 			sourceTree = "<group>";
@@ -112,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				71324DEA2A4DEB360051C1A8 /* MainPage */,
-				71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */,
-				71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */,
+				7158971F2A502EEE004E309D /* NewsPage */,
+				715897202A502EF9004E309D /* SSettingsPage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -133,8 +154,51 @@
 			children = (
 				71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */,
 				71324DEB2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift */,
+				71FA777B2A5066B600D80D6A /* ParticularTypeOfCell */,
 			);
 			path = MainPage;
+			sourceTree = "<group>";
+		};
+		7158971F2A502EEE004E309D /* NewsPage */ = {
+			isa = PBXGroup;
+			children = (
+				71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */,
+			);
+			path = NewsPage;
+			sourceTree = "<group>";
+		};
+		715897202A502EF9004E309D /* SSettingsPage */ = {
+			isa = PBXGroup;
+			children = (
+				71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */,
+			);
+			path = SSettingsPage;
+			sourceTree = "<group>";
+		};
+		715897212A503012004E309D /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				715897242A5033A2004E309D /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		71FA777B2A5066B600D80D6A /* ParticularTypeOfCell */ = {
+			isa = PBXGroup;
+			children = (
+				71FA77772A5062E900D80D6A /* ParticularTypeOfClass.swift */,
+				71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */,
+				71FA777E2A5086B900D80D6A /* CarInfo */,
+			);
+			path = ParticularTypeOfCell;
+			sourceTree = "<group>";
+		};
+		71FA777E2A5086B900D80D6A /* CarInfo */ = {
+			isa = PBXGroup;
+			children = (
+				71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */,
+			);
+			path = CarInfo;
 			sourceTree = "<group>";
 		};
 		9BF5874E7D9024F2E43BA3AB /* Pods */ = {
@@ -143,7 +207,6 @@
 				A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */,
 				2D4D15C27F8C425E8BDA62D5 /* Pods-WikiCars.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,6 +272,7 @@
 			files = (
 				71324DD42A4DBF370051C1A8 /* LaunchScreen.storyboard in Resources */,
 				71324DD12A4DBF370051C1A8 /* Assets.xcassets in Resources */,
+				715897232A5030E1004E309D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +327,18 @@
 			files = (
 				71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */,
 				71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */,
+				715897272A50345F004E309D /* DataCarsModel.swift in Sources */,
+				71FA777A2A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift in Sources */,
+				715897252A5033A2004E309D /* APIManager.swift in Sources */,
 				71324DEC2A4DEB530051C1A8 /* MainPageCollectionViewCell.swift in Sources */,
+				715897292A504023004E309D /* AllBrandsOfCars.swift in Sources */,
 				71324DE52A4DCCD80051C1A8 /* SettingsPageViewController.swift in Sources */,
+				71FA77782A5062E900D80D6A /* ParticularTypeOfClass.swift in Sources */,
 				71324DE32A4DCCC80051C1A8 /* NewsPageViewController.swift in Sources */,
 				71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */,
+				71FA77802A50957D00D80D6A /* ParticularyCarModel.swift in Sources */,
 				71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */,
+				71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */,
 				71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */,
 				71324DE12A4DCC010051C1A8 /* TabBarViewController.swift in Sources */,
 			);

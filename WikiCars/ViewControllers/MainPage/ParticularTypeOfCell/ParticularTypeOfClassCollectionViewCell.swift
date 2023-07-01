@@ -1,13 +1,13 @@
 //
-//  MainPageCollectionViewCell.swift
+//  ParticularTypeOfClassCollectionViewCell.swift
 //  WikiCars
 //
-//  Created by m223 on 29.06.2023.
+//  Created by m223 on 01.07.2023.
 //
 
 import UIKit
 
-class MainPageCollectionViewCell: UICollectionViewCell {
+class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
     
     static let reuseID = "CustomCollectionViewcell"
     
@@ -54,18 +54,10 @@ class MainPageCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configureCell(nameOfBrand: String){
-        
-        nameOfBrandLabel.text = nameOfBrand
-        print(nameOfBrand)
-        APIManager.shared.gettingImageOfBrands(picName: nameOfBrand) { image in
-            DispatchQueue.main.async {
-                self.imageOfBrandImage.image = image
-                
-            }
-        }
+    func configureCell(model: DataCarsModel){
+        //imageOfBrandImage.image = UIImage(named: image ?? "default")
+        nameOfBrandLabel.text = model.name
         
     }
-    
     
 }
