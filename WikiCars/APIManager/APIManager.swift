@@ -108,7 +108,7 @@ class APIManager {
         let reference = storage.reference()
         let pathRef = reference.child("imageOfCar")
         
-        var image: UIImage = UIImage(named: "default")!
+        var image: UIImage = UIImage(named: "mainPage")!
         
         let fileRef = pathRef.child(picName + ".jpeg")
         
@@ -127,7 +127,7 @@ class APIManager {
         
         var image: UIImage = UIImage(named: "default")!
         
-        let fileRef = pathRef.child(picName + ".jpeg")
+        let fileRef = pathRef.child(picName + ".png")
         
         fileRef.getData(maxSize: 1024*1024) { data, error in
             guard error == nil else { completion(image); print("ImageWasNotReceivedIngettingImageOfBrandsAPIManager"); return }

@@ -42,7 +42,7 @@ class MainPageViewController: BaseController {
         
         mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        mainCollectionView.backgroundColor = .white
+        mainCollectionView.backgroundColor = .lightGray
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         mainCollectionView.register(MainPageCollectionViewCell.self, forCellWithReuseIdentifier: MainPageCollectionViewCell.reuseID)

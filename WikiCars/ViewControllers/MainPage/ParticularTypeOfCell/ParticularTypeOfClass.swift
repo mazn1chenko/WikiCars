@@ -35,7 +35,7 @@ class ParticularTypeOfClass: UIViewController {
         
         mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        mainCollectionView.backgroundColor = .white
+        mainCollectionView.backgroundColor = .lightGray
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         mainCollectionView.register(ParticularTypeOfClassCollectionViewCell.self, forCellWithReuseIdentifier: ParticularTypeOfClassCollectionViewCell.reuseID)
@@ -76,7 +76,7 @@ extension ParticularTypeOfClass: UICollectionViewDelegate {
         let selected = allModelInType[indexPath.row]
         vc.title = selected.name
         vc.brand = title
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
 }

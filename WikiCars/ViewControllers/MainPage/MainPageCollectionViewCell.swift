@@ -17,7 +17,7 @@ class MainPageCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .darkGray
         layer.cornerRadius = 10
         layer.masksToBounds = true
         
@@ -31,10 +31,11 @@ class MainPageCollectionViewCell: UICollectionViewCell {
     
     func setup() {
         imageOfBrandImage.translatesAutoresizingMaskIntoConstraints = false
-        imageOfBrandImage.sizeToFit()
+        imageOfBrandImage.backgroundColor = .darkGray
         
         nameOfBrandLabel.translatesAutoresizingMaskIntoConstraints = false
         nameOfBrandLabel.sizeToFit()
+        nameOfBrandLabel.textAlignment = .center
         nameOfBrandLabel.textColor = .black
         
     }
@@ -46,6 +47,9 @@ class MainPageCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             imageOfBrandImage.centerXAnchor.constraint(equalTo: centerXAnchor),
             imageOfBrandImage.centerYAnchor.constraint(equalTo: centerYAnchor),
+            imageOfBrandImage.heightAnchor.constraint(equalToConstant: frame.height / 2),
+            imageOfBrandImage.widthAnchor.constraint(equalToConstant: frame.height / 2),
+            
             
             nameOfBrandLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             nameOfBrandLabel.topAnchor.constraint(equalTo: imageOfBrandImage.bottomAnchor, constant: 5)
