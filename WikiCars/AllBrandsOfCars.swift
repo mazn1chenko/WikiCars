@@ -9,6 +9,7 @@ import Foundation
 
 struct AllBrandsOfCars {
     
-    var allBrandsOfCars: [String]
+    var brandName: String
+    var descriptionOfBrand: String
     
 }

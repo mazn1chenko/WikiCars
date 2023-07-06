@@ -29,7 +29,7 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    private func setup() {
         imageOfBrandImage.translatesAutoresizingMaskIntoConstraints = false
         imageOfBrandImage.sizeToFit()
         
@@ -40,7 +40,7 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func layout() {
+    private func layout() {
         addSubview(imageOfBrandImage)
         addSubview(nameOfBrandLabel)
         

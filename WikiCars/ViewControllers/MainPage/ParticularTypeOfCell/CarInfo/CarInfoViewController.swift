@@ -25,7 +25,7 @@ class CarInfoViewController: UIViewController {
         network()
     }
     
-    func setup() {
+    private func setup() {
         
         imageOfCarImageView.translatesAutoresizingMaskIntoConstraints = false
         imageOfCarImageView.layer.cornerRadius = 10
@@ -43,7 +43,7 @@ class CarInfoViewController: UIViewController {
         
     }
     
-    func layout() {
+    private func layout() {
         view.addSubview(imageOfCarImageView)
         view.addSubview(descriptionOfCarLabel)
         view.addSubview(siteOfModelButton)
@@ -68,7 +68,7 @@ class CarInfoViewController: UIViewController {
         
     }
     
-    func network() {
+    private func network() {
         
         APIManager.shared.getImageOfCar(picName: title ?? "default") { image in
             DispatchQueue.main.async {

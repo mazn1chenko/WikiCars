@@ -7,15 +7,15 @@
 
 import UIKit
 
-class MainPageCollectionViewCell: UICollectionViewCell {
+class MainPageTableViewCell: UITableViewCell {
     
-    static let reuseID = "CustomCollectionViewcell"
+    static let reuseID = "CustomTableViewCell"
     
     let imageOfBrandImage = UIImageView()
-    let nameOfBrandLabel = UILabel()
+    let infoAboutCompany = UILabel()
         
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.backgroundColor = .darkGray
         layer.cornerRadius = 10
@@ -29,47 +29,41 @@ class MainPageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    private func setup() {
         imageOfBrandImage.translatesAutoresizingMaskIntoConstraints = false
         imageOfBrandImage.backgroundColor = .darkGray
         
-        nameOfBrandLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameOfBrandLabel.sizeToFit()
-        nameOfBrandLabel.textAlignment = .center
-        nameOfBrandLabel.textColor = .black
+        infoAboutCompany.translatesAutoresizingMaskIntoConstraints = false
+        infoAboutCompany.sizeToFit()
+        infoAboutCompany.textAlignment = .center
+        infoAboutCompany.textColor = .black
         
     }
     
-    func layout() {
+    private func layout() {
         addSubview(imageOfBrandImage)
-        addSubview(nameOfBrandLabel)
+        addSubview(infoAboutCompany)
         
         NSLayoutConstraint.activate([
-            imageOfBrandImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageOfBrandImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             imageOfBrandImage.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageOfBrandImage.heightAnchor.constraint(equalToConstant: frame.height / 2),
-            imageOfBrandImage.widthAnchor.constraint(equalToConstant: frame.height / 2),
+            imageOfBrandImage.heightAnchor.constraint(equalToConstant: frame.height / 1.1),
+            imageOfBrandImage.widthAnchor.constraint(equalToConstant: frame.height / 1.1),
             
-            
-            nameOfBrandLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameOfBrandLabel.topAnchor.constraint(equalTo: imageOfBrandImage.bottomAnchor, constant: 5)
-        
+            infoAboutCompany.leadingAnchor.constraint(equalTo: imageOfBrandImage.trailingAnchor, constant: 10),
+            infoAboutCompany.centerYAnchor.constraint(equalTo: centerYAnchor)
+
         ])
-        
     }
     
-    func configureCell(nameOfBrand: String){
+    func configureCell(model: AllBrandsOfCars){
+        infoAboutCompany.text = model.descriptionOfBrand
         
-        nameOfBrandLabel.text = nameOfBrand
-        print(nameOfBrand)
-        APIManager.shared.gettingImageOfBrands(picName: nameOfBrand) { image in
+        APIManager.shared.gettingImageOfBrands(picName: model.brandName) { image in
             DispatchQueue.main.async {
                 self.imageOfBrandImage.image = image
-                
             }
         }
-        
     }
-    
-    
 }
+

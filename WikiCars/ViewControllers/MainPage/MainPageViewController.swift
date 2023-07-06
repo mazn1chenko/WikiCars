@@ -4,14 +4,11 @@
 //
 //  Created by m223 on 29.06.2023.
 //
-
 import UIKit
 
 class MainPageViewController: BaseController {
     
-    var mainCollectionView: UICollectionView!
-    
-    let layoutFlow = UICollectionViewFlowLayout()
+    var mainTableView: UITableView!
     
     var allBrandsOfCars: [String]?
     
@@ -27,86 +24,72 @@ class MainPageViewController: BaseController {
         network()
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        mainCollectionView.refreshControl = refreshControl
-        
+        mainTableView.refreshControl = refreshControl
     }
     
     //MARK: - Two main function of configure view
     
     private func setup() {
-        
-        layoutFlow.scrollDirection = .vertical
-        layoutFlow.minimumLineSpacing = 5
-        layoutFlow.minimumInteritemSpacing = 1
-        layoutFlow.itemSize = CGSize(width: (view.frame.size.width / 2) - 5, height: (view.frame.size.width / 2) - 5)
-        
-        mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
-        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        mainCollectionView.backgroundColor = .lightGray
-        mainCollectionView.delegate = self
-        mainCollectionView.dataSource = self
-        mainCollectionView.register(MainPageCollectionViewCell.self, forCellWithReuseIdentifier: MainPageCollectionViewCell.reuseID)
-        
-        
+        mainTableView = UITableView()
+        mainTableView.translatesAutoresizingMaskIntoConstraints = false
+        mainTableView.backgroundColor = .lightGray
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        mainTableView.register(MainPageTableViewCell.self, forCellReuseIdentifier: MainPageTableViewCell.reuseID)
+        mainTableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+
     }
     
     private func layout() {
-        view.addSubview(mainCollectionView)
+        view.addSubview(mainTableView)
         
         NSLayoutConstraint.activate([
-            mainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mainCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            mainCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            
+            mainTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mainTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mainTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            mainTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
-        
     }
     
     //MARK: - Network
     
-    func network(){
-        
+    private func network(){
         APIManager.shared.gettingCarsOfAllBrands(collection: "DataOfCars", docName: "AllBrands") { all in
             self.allBrandsOfCars = all
-            self.mainCollectionView.reloadData()
-            
+            self.mainTableView.reloadData()
         }
-        
-        
     }
     
     @objc private func refreshData() {
-        mainCollectionView.reloadData()
-        
+        mainTableView.reloadData()
         refreshControl.endRefreshing()
     }
 }
 
-    //MARK: - Extensions
+//MARK: - Extensions
 
-extension MainPageViewController: UICollectionViewDelegate{
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension MainPageViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ParticularTypeOfClass()
         vc.title = allBrandsOfCars?[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 120 }
     
 }
 
-extension MainPageViewController: UICollectionViewDataSource{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return allBrandsOfCars?.count ?? 1 }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainPageCollectionViewCell.reuseID, for: indexPath) as? MainPageCollectionViewCell
-        cell?.configureCell(nameOfBrand: allBrandsOfCars?[indexPath.row] ?? "NoInternet")
-        return cell!
+extension MainPageViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allBrandsOfCars?.count ?? 1
     }
     
     
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainPageTableViewCell.reuseID, for: indexPath) as? MainPageTableViewCell
+        cell?.configureCell(nameOfBrand: allBrandsOfCars?[indexPath.row] ?? "NoInternet")
+        return cell!
+    }
 }
 

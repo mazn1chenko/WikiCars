@@ -138,7 +138,7 @@
 			children = (
 				71324DEA2A4DEB360051C1A8 /* MainPage */,
 				7158971F2A502EEE004E309D /* NewsPage */,
-				715897202A502EF9004E309D /* SSettingsPage */,
+				715897202A502EF9004E309D /* SettingsPage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -171,12 +171,12 @@
 			path = NewsPage;
 			sourceTree = "<group>";
 		};
-		715897202A502EF9004E309D /* SSettingsPage */ = {
+		715897202A502EF9004E309D /* SettingsPage */ = {
 			isa = PBXGroup;
 			children = (
 				71324DE42A4DCCD80051C1A8 /* SettingsPageViewController.swift */,
 			);
-			path = SSettingsPage;
+			path = SettingsPage;
 			sourceTree = "<group>";
 		};
 		715897212A503012004E309D /* APIManager */ = {

@@ -8,6 +8,9 @@
 import UIKit
 
 class NewsPageViewController: BaseController {
+    
+    //let collectionView = UICollectionView()
+    let flowLayout = UICollectionViewFlowLayout()
 
     override func viewDidLoad() {
         super.viewDidLoad()
