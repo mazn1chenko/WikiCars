@@ -89,10 +89,11 @@ class APIManager {
             
             var dataCars: [ParticularyCarModel] = []
             
-            let name = document?.get("name") as? String ?? "NoData"
-            let description = document?.get("description") as? String ?? "NoData"
-            let brand = document?.get("brand") as? String ?? "NoData"
-            let data = ParticularyCarModel(name: name, desription: description, brand: brand)
+            let name = document?.get("name") as? String ?? "NoDataAbountName"
+            let description = document?.get("description") as? String ?? "NoDataAbountDescription"
+            let brand = document?.get("brand") as? String ?? "NoDataAbountBrand"
+            let siteOfModel = document?.get("siteOfModel") as? String ?? "NoDataAboutSiteOfModel"
+            let data = ParticularyCarModel(name: name, desription: description, brand: brand, siteOfModel: siteOfModel)
             dataCars.append(data)
             
             completion(dataCars)

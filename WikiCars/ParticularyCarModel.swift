@@ -12,5 +12,6 @@ struct ParticularyCarModel {
     var name: String
     var desription: String
     var brand: String
+    var siteOfModel: String
     
 }

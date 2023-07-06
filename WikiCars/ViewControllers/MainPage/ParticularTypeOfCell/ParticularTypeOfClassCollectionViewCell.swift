@@ -17,7 +17,7 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .darkGray
         layer.cornerRadius = 10
         layer.masksToBounds = true
         
@@ -35,7 +35,8 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
         
         nameOfBrandLabel.translatesAutoresizingMaskIntoConstraints = false
         nameOfBrandLabel.sizeToFit()
-        nameOfBrandLabel.textColor = .black
+        nameOfBrandLabel.textColor = .lightGray
+        nameOfBrandLabel.font = UIFont.systemFont(ofSize: 20)
         
     }
     
@@ -48,7 +49,7 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
             imageOfBrandImage.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             nameOfBrandLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nameOfBrandLabel.topAnchor.constraint(equalTo: imageOfBrandImage.bottomAnchor, constant: 5)
+            nameOfBrandLabel.topAnchor.constraint(equalTo: imageOfBrandImage.bottomAnchor)
         
         ])
         

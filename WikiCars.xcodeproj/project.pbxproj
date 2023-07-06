@@ -27,6 +27,7 @@
 		71FA777A2A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */; };
 		71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */; };
 		71FA77802A50957D00D80D6A /* ParticularyCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */; };
+		71FD1AA22A5472D100A14168 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71FD1AA12A5472D000A14168 /* SafariServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularTypeOfClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
 		71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularyCarModel.swift; sourceTree = "<group>"; };
+		71FD1AA12A5472D000A14168 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		A4999A20E339BEB55A88D35C /* Pods-WikiCars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiCars.debug.xcconfig"; path = "Target Support Files/Pods-WikiCars/Pods-WikiCars.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71FD1AA22A5472D100A14168 /* SafariServices.framework in Frameworks */,
 				311BDBC36EB6C7CFB25B7841 /* Pods_WikiCars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +74,7 @@
 		251B049BE242B259681FF5CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				71FD1AA12A5472D000A14168 /* SafariServices.framework */,
 				643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */,
 			);
 			name = Frameworks;
