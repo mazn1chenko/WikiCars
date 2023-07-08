@@ -30,6 +30,7 @@ class CarInfoViewController: UIViewController {
         imageOfCarImageView.translatesAutoresizingMaskIntoConstraints = false
         imageOfCarImageView.layer.cornerRadius = 10
         imageOfCarImageView.clipsToBounds = true 
+        imageOfCarImageView.isUserInteractionEnabled = true
         
         descriptionOfCarLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionOfCarLabel.textAlignment = .center
@@ -40,6 +41,9 @@ class CarInfoViewController: UIViewController {
         siteOfModelButton.addTarget(self, action: #selector(openSafariButtonTapped), for: .touchUpInside)
         siteOfModelButton.backgroundColor = .orange
         siteOfModelButton.layer.cornerRadius = 10
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageOfCarImageView.addGestureRecognizer(tapGesture)
         
     }
     
@@ -88,6 +92,46 @@ class CarInfoViewController: UIViewController {
         })
         
         
+    }
+    
+    //MARK: - Objc func
+    
+    @objc func imageTapped() {
+        let zoomedImage = UIImageView(image: imageOfCarImageView.image)
+        zoomedImage.frame = view.bounds
+        zoomedImage.contentMode = .scaleAspectFit
+        zoomedImage.backgroundColor = .black
+        zoomedImage.layer.cornerRadius = 10
+        zoomedImage.backgroundColor = .lightGray.withAlphaComponent(0.99)
+        zoomedImage.isUserInteractionEnabled = true
+        zoomedImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissZoomedView)))
+        
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(scaleZoomedView(_:)))
+        zoomedImage.addGestureRecognizer(pinchGesture)
+        
+        view.addSubview(zoomedImage)
+    }
+    
+    @objc func dismissZoomedView() {
+        view.subviews.last?.removeFromSuperview()
+    }
+    
+    @objc func scaleZoomedView(_ sender: UIPinchGestureRecognizer) {
+        guard let zoomedImage = sender.view as? UIImageView else {
+            return
+        }
+
+        if sender.state == .changed {
+            let currentScale = zoomedImage.frame.size.width / zoomedImage.bounds.size.width
+            let newScale = currentScale * sender.scale
+            
+            if newScale > 1.0 && newScale < 3.0 { 
+                let transform = CGAffineTransform(scaleX: newScale, y: newScale)
+                zoomedImage.transform = transform
+            }
+            
+            sender.scale = 1.0
+        }
     }
     
     @IBAction func openSafariButtonTapped(_ sender: UIButton) {

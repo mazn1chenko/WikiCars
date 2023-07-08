@@ -10,7 +10,7 @@ class MainPageViewController: BaseController {
     
     var mainTableView: UITableView!
     
-    var allBrandsOfCars: [String]?
+    var allBrandsOfCars: [AllBrandsOfCars]?
     
     let refreshControl = UIRefreshControl()
     
@@ -37,6 +37,10 @@ class MainPageViewController: BaseController {
         mainTableView.dataSource = self
         mainTableView.register(MainPageTableViewCell.self, forCellReuseIdentifier: MainPageTableViewCell.reuseID)
         mainTableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        mainTableView.separatorStyle = .singleLine
+        mainTableView.separatorColor = .lightGray
+        mainTableView.separatorInset = .zero
+        mainTableView.cellLayoutMarginsFollowReadableWidth = false
 
     }
     
@@ -54,7 +58,7 @@ class MainPageViewController: BaseController {
     //MARK: - Network
     
     private func network(){
-        APIManager.shared.gettingCarsOfAllBrands(collection: "DataOfCars", docName: "AllBrands") { all in
+        APIManager.shared.gettingCarsOfAllBrands(collection: "DataOfCars", docName: "AllBrands", collection2: "all") { all in
             self.allBrandsOfCars = all
             self.mainTableView.reloadData()
         }
@@ -71,24 +75,25 @@ class MainPageViewController: BaseController {
 extension MainPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ParticularTypeOfClass()
-        vc.title = allBrandsOfCars?[indexPath.row]
+        vc.title = allBrandsOfCars?[indexPath.row].brandName
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { 120 }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { view.frame.height/7 }
     
 }
 
 extension MainPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allBrandsOfCars?.count ?? 1
+        return allBrandsOfCars?.count ?? 0
     }
     
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainPageTableViewCell.reuseID, for: indexPath) as? MainPageTableViewCell
-        cell?.configureCell(nameOfBrand: allBrandsOfCars?[indexPath.row] ?? "NoInternet")
+        cell?.configureCell(model: (allBrandsOfCars?[indexPath.row])!)
+        
         return cell!
     }
 }

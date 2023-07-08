@@ -26,30 +26,37 @@ class APIManager {
         
     }
     
-    func gettingCarsOfAllBrands(collection: String, docName: String, completion: @escaping ([String]?) -> Void) {
+    func gettingCarsOfAllBrands(collection: String, docName: String, collection2: String, completion: @escaping ([AllBrandsOfCars]?) -> Void) {
         let db = configureFB()
-        db.collection(collection).document(docName).getDocument { document, error in
+        let ref = db.collection(collection).document(docName).collection(collection2)
+        
+        ref.getDocuments { querySnapshot, error in
             guard error == nil else {
                 completion(nil)
                 print("Error in gettingCarsOfAllBrands: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             
-            if let document = document, document.exists {
-                if let data = document.data(), let allBrands = data["all"] as? [String] {
-                    completion(allBrands)
-                } else {
-                    completion(nil)
-                    print("Invalid data format or empty 'All' field")
-                }
+            var allBrandsOfCars: [AllBrandsOfCars] = []
+            
+            for document in querySnapshot!.documents {
+                let brandName = document.get("brandName") as? String ?? "NoData"
+                let descriptionOfBrand = document.get("descriptionOfBrand") as? String ?? "NoData"
+                let brand = AllBrandsOfCars(brandName: brandName, descriptionOfBrand: descriptionOfBrand)
+                allBrandsOfCars.append(brand)
+            }
+            
+            if !allBrandsOfCars.isEmpty {
+                completion(allBrandsOfCars)
             } else {
                 completion(nil)
-                print("Document does not exist")
+                print("Invalid data format or empty 'All' field")
             }
         }
     }
-
-
+    
+    
+    
     
     func getPosts(collection1: String, docName: String, collection2: String, completion: @escaping ([DataCarsModel]) -> Void){
         let db = configureFB()
@@ -99,10 +106,10 @@ class APIManager {
             completion(dataCars)
         }
     }
-
-
-
-
+    
+    
+    
+    
     
     func getImageOfCar(picName: String, completion: @escaping (UIImage) -> Void) {
         let storage = Storage.storage()
@@ -137,6 +144,29 @@ class APIManager {
         }
         
     }
-    
+    func getNews(collection: String, completion: @escaping ([NewsModel]) -> Void) {
+        let db = configureFB()
+        let ref = db.collection(collection)
+        
+        ref.getDocuments { querySnapshot, error in
+            guard let documents = querySnapshot?.documents, error == nil else {
+                completion([])
+                print("Error in getNews: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            var news: [NewsModel] = []
+            
+            for document in documents {
+                let title = document.get("title") as? String ?? "NoDataAboutTitle"
+                let description = document.get("description") as? String ?? "NoDataAboutDescription"
+                let date = document.get("date") as? String ?? "NoDataAboutDate"
+                let data = NewsModel(title: title, description: description, date: date)
+                news.append(data)
+            }
+            
+            completion(news)
+        }
+    }
     
 }

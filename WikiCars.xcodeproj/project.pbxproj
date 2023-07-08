@@ -23,6 +23,7 @@
 		715897252A5033A2004E309D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897242A5033A2004E309D /* APIManager.swift */; };
 		715897272A50345F004E309D /* DataCarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897262A50345F004E309D /* DataCarsModel.swift */; };
 		715897292A504023004E309D /* AllBrandsOfCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715897282A504023004E309D /* AllBrandsOfCars.swift */; };
+		71659AE32A59C15C00D59B60 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71659AE22A59C15C00D59B60 /* NewsModel.swift */; };
 		71FA77782A5062E900D80D6A /* ParticularTypeOfClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA77772A5062E900D80D6A /* ParticularTypeOfClass.swift */; };
 		71FA777A2A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */; };
 		71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */; };
@@ -50,6 +51,7 @@
 		715897242A5033A2004E309D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		715897262A50345F004E309D /* DataCarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCarsModel.swift; sourceTree = "<group>"; };
 		715897282A504023004E309D /* AllBrandsOfCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBrandsOfCars.swift; sourceTree = "<group>"; };
+		71659AE22A59C15C00D59B60 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		71FA77772A5062E900D80D6A /* ParticularTypeOfClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularTypeOfClass.swift; sourceTree = "<group>"; };
 		71FA77792A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticularTypeOfClassCollectionViewCell.swift; sourceTree = "<group>"; };
 		71FA777C2A5086B400D80D6A /* CarInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
@@ -101,15 +103,13 @@
 		71324DC62A4DBF340051C1A8 /* WikiCars */ = {
 			isa = PBXGroup;
 			children = (
+				715897222A5030E0004E309D /* GoogleService-Info.plist */,
+				71324DDB2A4DBF850051C1A8 /* SupportingFiles */,
 				715897212A503012004E309D /* APIManager */,
 				71324DDC2A4DBFBE0051C1A8 /* Application */,
-				71324DDD2A4DBFFE0051C1A8 /* ViewControllers */,
 				71324DDF2A4DCB9C0051C1A8 /* BaseController */,
-				71324DDB2A4DBF850051C1A8 /* SupportingFiles */,
-				715897222A5030E0004E309D /* GoogleService-Info.plist */,
-				715897262A50345F004E309D /* DataCarsModel.swift */,
-				71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */,
-				715897282A504023004E309D /* AllBrandsOfCars.swift */,
+				71659AE12A59BFC300D59B60 /* Models */,
+				71324DDD2A4DBFFE0051C1A8 /* ViewControllers */,
 			);
 			path = WikiCars;
 			sourceTree = "<group>";
@@ -185,6 +185,17 @@
 				715897242A5033A2004E309D /* APIManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		71659AE12A59BFC300D59B60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				715897262A50345F004E309D /* DataCarsModel.swift */,
+				71FA777F2A50957C00D80D6A /* ParticularyCarModel.swift */,
+				715897282A504023004E309D /* AllBrandsOfCars.swift */,
+				71659AE22A59C15C00D59B60 /* NewsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		71FA777B2A5066B600D80D6A /* ParticularTypeOfCell */ = {
@@ -342,6 +353,7 @@
 				71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */,
 				71FA77802A50957D00D80D6A /* ParticularyCarModel.swift in Sources */,
 				71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */,
+				71659AE32A59C15C00D59B60 /* NewsModel.swift in Sources */,
 				71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */,
 				71324DE92A4DD49A0051C1A8 /* BaseController.swift in Sources */,
 				71324DE12A4DCC010051C1A8 /* TabBarViewController.swift in Sources */,

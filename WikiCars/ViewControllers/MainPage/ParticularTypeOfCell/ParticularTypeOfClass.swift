@@ -22,6 +22,9 @@ class ParticularTypeOfClass: UIViewController {
         setup()
         layout()
         network()
+        view.backgroundColor = .lightGray
+        
+        
     }
     
     //MARK: - Two main function of configure view
@@ -31,7 +34,7 @@ class ParticularTypeOfClass: UIViewController {
         layoutFlow.scrollDirection = .vertical
         layoutFlow.minimumLineSpacing = 5
         layoutFlow.minimumInteritemSpacing = 1
-        layoutFlow.itemSize = CGSize(width: (view.frame.size.width / 2) - 5, height: (view.frame.size.width / 2) - 5)
+        layoutFlow.itemSize = CGSize(width: (view.frame.size.width / 2.1), height: (view.frame.size.width / 2.1))
         
         mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
         mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,9 +51,9 @@ class ParticularTypeOfClass: UIViewController {
         
         NSLayoutConstraint.activate([
             mainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mainCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mainCollectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            mainCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            mainCollectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
 
         ])
         

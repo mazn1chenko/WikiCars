@@ -36,8 +36,8 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
         nameOfBrandLabel.translatesAutoresizingMaskIntoConstraints = false
         nameOfBrandLabel.sizeToFit()
         nameOfBrandLabel.textColor = .lightGray
-        nameOfBrandLabel.font = UIFont.systemFont(ofSize: 20)
-        
+        nameOfBrandLabel.font = UIFont.boldSystemFont(ofSize: 20)
+                
     }
     
     private func layout() {
@@ -54,9 +54,9 @@ class ParticularTypeOfClassCollectionViewCell: UICollectionViewCell {
         ])
         
     }
-    
+ 
     func configureCell(model: DataCarsModel){
-        //imageOfBrandImage.image = UIImage(named: image ?? "default")
+        
         nameOfBrandLabel.text = model.name
         
     }
