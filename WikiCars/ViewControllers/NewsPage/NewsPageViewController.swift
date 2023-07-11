@@ -12,12 +12,13 @@ class NewsPageViewController: BaseController {
         var mainCollectionView: UICollectionView!
         
         let layoutFlow = UICollectionViewFlowLayout()
-        
-        var allModelInType: [DataCarsModel] = []
+            
+        var allNewsArray: [NewsModel] = []
         
         override func viewDidLoad() {
             super.viewDidLoad()
             
+            title = "Новини"
             
             setup()
             layout()
@@ -34,14 +35,15 @@ class NewsPageViewController: BaseController {
             layoutFlow.scrollDirection = .vertical
             layoutFlow.minimumLineSpacing = 5
             layoutFlow.minimumInteritemSpacing = 1
-            layoutFlow.itemSize = CGSize(width: (view.frame.size.width / 2.1), height: (view.frame.size.width / 2.1))
+            layoutFlow.itemSize = CGSize(width: (view.frame.size.width / 1.03),
+                                         height: view.frame.size.height / 3)
             
             mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layoutFlow)
             mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
             mainCollectionView.backgroundColor = .lightGray
             mainCollectionView.delegate = self
             mainCollectionView.dataSource = self
-            mainCollectionView.register(ParticularTypeOfClassCollectionViewCell.self, forCellWithReuseIdentifier: ParticularTypeOfClassCollectionViewCell.reuseID)
+            mainCollectionView.register(NewsPageCollectionViewCell.self, forCellWithReuseIdentifier: NewsPageCollectionViewCell.reuseID)
             
             
         }
@@ -62,7 +64,10 @@ class NewsPageViewController: BaseController {
         private func network() {
             
             APIManager.shared.getNews(collection: "NewsOfCar") { all in
-                //print(all)
+                
+                self.allNewsArray = all
+                self.mainCollectionView.reloadData()
+                
             }
         }
         
@@ -74,8 +79,8 @@ class NewsPageViewController: BaseController {
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             let vc = CarInfoViewController()
-            let selected = allModelInType[indexPath.row]
-            vc.title = selected.name
+            let selected = allNewsArray[indexPath.row]
+            vc.title = selected.title
             vc.brand = title
             navigationController?.pushViewController(vc, animated: false)
         }
@@ -84,11 +89,12 @@ class NewsPageViewController: BaseController {
 
     extension NewsPageViewController: UICollectionViewDataSource {
         
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return allModelInType.count}
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { return allNewsArray.count}
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ParticularTypeOfClassCollectionViewCell.reuseID, for: indexPath) as? ParticularTypeOfClassCollectionViewCell
-            cell?.configureCell(model: allModelInType[indexPath.row])
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewsPageCollectionViewCell.reuseID, for: indexPath) as? NewsPageCollectionViewCell
+            cell?.configureCell(model: allNewsArray[indexPath.row])
+            cell!.layer.cornerRadius = 10
             return cell!
             
         }

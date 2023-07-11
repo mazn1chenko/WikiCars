@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		311BDBC36EB6C7CFB25B7841 /* Pods_WikiCars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */; };
+		712876212A5D609A00D7279B /* NewsPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712876202A5D609A00D7279B /* NewsPageCollectionViewCell.swift */; };
+		712876252A5D71EA00D7279B /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712876242A5D71EA00D7279B /* AuthViewController.swift */; };
 		71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DC72A4DBF340051C1A8 /* AppDelegate.swift */; };
 		71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DC92A4DBF340051C1A8 /* SceneDelegate.swift */; };
 		71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71324DCB2A4DBF340051C1A8 /* MainPageViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		2D4D15C27F8C425E8BDA62D5 /* Pods-WikiCars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiCars.release.xcconfig"; path = "Target Support Files/Pods-WikiCars/Pods-WikiCars.release.xcconfig"; sourceTree = "<group>"; };
 		643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WikiCars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		712876202A5D609A00D7279B /* NewsPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		712876242A5D71EA00D7279B /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		71324DC42A4DBF340051C1A8 /* WikiCars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiCars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71324DC72A4DBF340051C1A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71324DC92A4DBF340051C1A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,14 @@
 				643D16DE495C031F641F2F17 /* Pods_WikiCars.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		712876262A5D738200D7279B /* LaunchPage */ = {
+			isa = PBXGroup;
+			children = (
+				712876242A5D71EA00D7279B /* AuthViewController.swift */,
+			);
+			path = LaunchPage;
 			sourceTree = "<group>";
 		};
 		71324DBB2A4DBF340051C1A8 = {
@@ -139,6 +151,7 @@
 				71324DEA2A4DEB360051C1A8 /* MainPage */,
 				7158971F2A502EEE004E309D /* NewsPage */,
 				715897202A502EF9004E309D /* SettingsPage */,
+				712876262A5D738200D7279B /* LaunchPage */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				71324DE22A4DCCC80051C1A8 /* NewsPageViewController.swift */,
+				712876202A5D609A00D7279B /* NewsPageCollectionViewCell.swift */,
 			);
 			path = NewsPage;
 			sourceTree = "<group>";
@@ -341,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71324DCC2A4DBF340051C1A8 /* MainPageViewController.swift in Sources */,
+				712876252A5D71EA00D7279B /* AuthViewController.swift in Sources */,
 				71324DC82A4DBF340051C1A8 /* AppDelegate.swift in Sources */,
 				715897272A50345F004E309D /* DataCarsModel.swift in Sources */,
 				71FA777A2A5066B100D80D6A /* ParticularTypeOfClassCollectionViewCell.swift in Sources */,
@@ -352,6 +367,7 @@
 				71324DE32A4DCCC80051C1A8 /* NewsPageViewController.swift in Sources */,
 				71324DCA2A4DBF340051C1A8 /* SceneDelegate.swift in Sources */,
 				71FA77802A50957D00D80D6A /* ParticularyCarModel.swift in Sources */,
+				712876212A5D609A00D7279B /* NewsPageCollectionViewCell.swift in Sources */,
 				71324DE72A4DD3860051C1A8 /* NavigationBarController.swift in Sources */,
 				71659AE32A59C15C00D59B60 /* NewsModel.swift in Sources */,
 				71FA777D2A5086B400D80D6A /* CarInfoViewController.swift in Sources */,

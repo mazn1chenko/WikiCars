@@ -93,6 +93,7 @@ extension MainPageViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainPageTableViewCell.reuseID, for: indexPath) as? MainPageTableViewCell
         cell?.configureCell(model: (allBrandsOfCars?[indexPath.row])!)
+        cell?.selectionStyle = .none
         
         return cell!
     }

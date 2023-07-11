@@ -12,6 +12,7 @@ target 'WikiCars' do
  pod 'FirebaseStorage'
  pod 'Firebase/Core'
  pod 'Firebase/Auth'
+ #pod 'FBSDKCoreKit'
 
   # Pods for WikiCars
 

@@ -37,8 +37,8 @@ class TabBarViewController: UITabBarController {
         let settingsPageNavigationController = NavigationBarController(rootViewController: settingsPageViewController)
         
         mainPageNavigationController.tabBarItem = UITabBarItem(title: "WikiCars", image: UIImage(named: "mainPage"), tag: Tabs.main.rawValue)
-        newsPageNavigationController.tabBarItem = UITabBarItem(title: "News", image: UIImage(named: "newsPage"), tag: Tabs.news.rawValue)
-        settingsPageNavigationController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settingsPage"), tag: Tabs.settings.rawValue)
+        newsPageNavigationController.tabBarItem = UITabBarItem(title: "Новини", image: UIImage(named: "newsPage"), tag: Tabs.news.rawValue)
+        settingsPageNavigationController.tabBarItem = UITabBarItem(title: "Налаштування", image: UIImage(named: "settingsPage"), tag: Tabs.settings.rawValue)
         
         
         setViewControllers([newsPageNavigationController, mainPageNavigationController, settingsPageNavigationController], animated: false)

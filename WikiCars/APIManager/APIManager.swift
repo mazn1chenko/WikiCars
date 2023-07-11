@@ -144,6 +144,7 @@ class APIManager {
         }
         
     }
+    
     func getNews(collection: String, completion: @escaping ([NewsModel]) -> Void) {
         let db = configureFB()
         let ref = db.collection(collection)
@@ -157,16 +158,26 @@ class APIManager {
             
             var news: [NewsModel] = []
             
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            
             for document in documents {
                 let title = document.get("title") as? String ?? "NoDataAboutTitle"
                 let description = document.get("description") as? String ?? "NoDataAboutDescription"
-                let date = document.get("date") as? String ?? "NoDataAboutDate"
-                let data = NewsModel(title: title, description: description, date: date)
-                news.append(data)
+                
+                if let timestamp = document.get("date") as? Timestamp {
+                    let date = timestamp.dateValue()
+                    let dateString = dateFormatter.string(from: date)
+                    let data = NewsModel(title: title, description: description, date: dateString)
+                    news.append(data)
+                } else {
+                    let date = "NoDataAboutDate"
+                    let data = NewsModel(title: title, description: description, date: date)
+                    news.append(data)
+                }
             }
             
             completion(news)
         }
     }
-    
 }
